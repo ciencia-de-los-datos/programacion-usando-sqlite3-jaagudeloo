@@ -18,21 +18,4 @@
 --  >>> Escriba su codigo a partir de este punto <<<
 --
 
-import sqlite3
-import pandas as pd
-
-conexion = sqlite3.connect(':memory:')
-cursor = conexion.cursor()
-
-#1
-tbl1_pandas = pd.read_csv('tbl1.csv', header = None)
-tbl1_pandas.columns = ['K0', 'K1', 'c12', 'c13', 'c14', 'c15', 'c16']
-tbl1_pandas['c14'] = pd.to_datetime(tbl1_pandas['c14'], format='%Y-%m-%d')
-
-tbl1_pandas.to_sql(
-    name='tbl1',
-    con=conexion,
-    if_exists='replace',
-)
-
-cursor.execute('SELECT sum(c12) FROM tbl1;').fetchall()
+SELECT SUM(c12) FROM tbl1;
