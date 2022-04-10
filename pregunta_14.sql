@@ -42,5 +42,6 @@
 --  4  E  555.323077
 --
 --  >>> Escriba su codigo a partir de este punto <<<
+SELECT K0, avg(c21) FROM tbl1 A, tbl2 B WHERE A.K1 = B.K1 AND c13 > 400 GROUP BY K0;
 --  
 
