@@ -40,4 +40,5 @@
 --  3  G  5000  100  NLPLO  0.2
 --
 --  >>> Escriba su codigo a partir de este punto <<<
+SELECT * FROM tbl0 WHERE c02 = 100 OR c02 = 600;
 --  
